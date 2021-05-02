@@ -6,11 +6,12 @@
         <link rel="stylesheet" type= "text/css" href="Home.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@1,600&display=swap" rel="stylesheet">  
-        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="font-awesome.min.css">
         <script src="https://code.jquery.com/jquery-3.6.0.js"
                 integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
                 crossorigin="anonymous">
         </script>
+        <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
         <script src="Home.js" async></script>
         <title> Argot </title>
     </head>
@@ -19,11 +20,13 @@
         <header>
                 <nav>
                     <a href="Home.html" class="logo">Argot</a>
-                    <div class="openMenu"><i class="fa fa-bars"></i></div>
-                    <ul class=mainMenu>
-                        <li><a href= "#desc">About</a></li>
-                        <li><a href="SignIn.html">Sign In</a></li>
-                        <div class="closeMenu"><i class="fa fa-times"></i></div>
+                    <div class= "menu-btn">
+                        <div class= "menu-btn_lines"></div>
+                    </div>
+                    <ul class= "mainMenu">
+                        <li><a href= "#desc" class= "item">About</a></li>
+                        <li><a href="SignIn.html" class= "item">Sign In</a></li>
+                        <li><a id="signUpBtnNav" class= "item" href="SignUp.html">Sign Up</a></li>
                     </ul>
                 </nav>
         </header>

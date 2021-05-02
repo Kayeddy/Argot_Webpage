@@ -33,13 +33,18 @@ header nav .logo
     font-size: 2em;
     text-transform: uppercase;
     letter-spacing: 2px;
+    position: absolute;
+    top: 60%;
+    left: 8%;
 }
 header nav .mainMenu
 {
     display: flex;
+    position: absolute;
     justify-content: center;
     align-items: center;
-    margin-right: 50px;
+    top: 85%;
+    left: 70%;
 }
 header nav .mainMenu li
 {
@@ -53,6 +58,11 @@ header nav .mainMenu li a
     color:#fff;
     border-radius: 20px;
     font-family: "vollkorn";
+    transition: background 0.3s ease-in-out;
+}
+header nav .mainMenu li a#signUpBtnNav
+{
+    display: none;
 }
 header nav .mainMenu li a:hover
 {
@@ -60,18 +70,50 @@ header nav .mainMenu li a:hover
     color:#2b1055;
     font-size: 18px;
 }
-header nav .openMenu
+header nav .menu-btn
 {
-    font-size: 2rem;
-    margin: 20px;
+    position: relative;
     display: none;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
     cursor: pointer;
+    z-index: 10000;
 }
-header nav .mainMenu .closeMenu
+.menu-btn_lines, .menu-btn_lines::before, .menu-btn_lines::after
 {
-    font-size: 2rem;
-    display: none;
-    cursor: pointer;
+    width: 1.5rem;
+    height: 0.2rem;
+    background-color: #fff;
+    transition: all 0.5s ease-in-out;
+    border-radius: 50px;
+}
+.menu-btn_lines::before, .menu-btn_lines::after
+{
+    content: "";
+    position: absolute;
+}
+.menu-btn_lines::before
+{
+    transform: translateY(-0.5rem);
+}
+.menu-btn_lines::after
+{
+    transform: translateY(0.5rem);
+}
+header nav .menu-btn.open .menu-btn_lines
+{
+    transform:translateX(2rem);
+    background-color: transparent;
+}
+header nav .menu-btn.open .menu-btn_lines::before
+{
+    transform: rotate(45deg) translate(-1.5rem, 1.5rem);
+}
+header nav .menu-btn.open .menu-btn_lines::after
+{
+    transform: rotate(-45deg) translate(-1.5rem, -1.5rem);
 }
 section
 {
@@ -124,10 +166,10 @@ section img#cannon
 #signUpBtn
 {
     font-family: "vollkorn";
-    position: relative;
-    left: 597px;
-    top:360px;
-    display: inline-block;
+    position: absolute;
+    left: 45.7%;
+    top: 60%;
+    display: flex;
     text-decoration: none;
     padding: 8px 30px;
     border-radius: 20px;
@@ -261,6 +303,7 @@ section img#cannon
 .descriptionCard .descriptionText h2
 {
     color: #fff;
+    font-family: "vollkorn";
     text-transform: uppercase;
     font-size: 2em;
     line-height: 1em;
@@ -302,17 +345,31 @@ section img#cannon
   }
 
 
-  @media (max-width: 991px)
+  @media (max-width: 767px)
   {
-    header nav .openMenu
+    #signUpBtn
     {
-       display: flex;
-       position: relative;
+        display: none;
+    }
+    header nav .logo
+    {
+        position: absolute;
+        left: 10%;
+        top: 30%;
+    }
+    header nav .menu-btn
+    {
+        display: flex;
+        position: absolute;
+        left: 80%;
+        top: 48%;
     }
     header nav .mainMenu
     {
+        display: none;
+        position: absolute;
         height: 100vh;
-        position: fixed;
+        width: 35%;
         top: 0;
         right: 0;
         left: 0;
@@ -321,22 +378,27 @@ section img#cannon
         justify-content: center;
         align-items: center;
         background: #000;
-        transition: top 1s ease;
-        display: none;
+        transition: 0.3s ease-in-out;
     }
-    header nav .mainMenu .closeMenu
+    header nav .mainMenu.open
     {
-        display: block;
-        position: absolute;
-        top: 20px;
-        right: 20px;
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+    }
+    header nav .mainMenu li a#signUpBtnNav
+    {
+        display: flex;
+    }
+    header nav .mainMenu li
+    {
+        margin: 30px;
+        transition: 0.3s ease-in-out;
     }
     header nav .mainMenu li a:hover
     {
-        background: none;
-        color:rgb(255, 255, 255);
-        font-size: 1.6rem;
-
+        background: #fff;
+        color:#2b1055;
+        font-size: 1.1rem;
     }
     .descriptionCard
     {
@@ -371,6 +433,7 @@ section img#cannon
         width: 250px;
     }
   }
+
   @media (max-width: 420px)
   {
     .descriptionCard
@@ -391,6 +454,7 @@ section img#cannon
         width: 101%;
     }
   }
+
   @keyframes loader {
     0% { transform: rotate(0deg);}
     25% { transform: rotate(180deg);}
