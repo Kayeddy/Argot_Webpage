@@ -1,0 +1,486 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body
+{
+  
+   min-height: 50vh;
+   background: linear-gradient(#2b1055,#42455a);
+   min-width: 50%;
+}
+header nav
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+header nav .logo
+{
+    color: #fff;
+    font-family: "vollkorn";
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 60%;
+    left: 8%;
+}
+header nav .mainMenu
+{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 85%;
+    left: 70%;
+}
+header nav .mainMenu li
+{
+    list-style-type: none;
+    margin-left: 20px;
+}
+header nav .mainMenu li a
+{
+    text-decoration: none;
+    padding: 6px 15px;
+    color:#fff;
+    border-radius: 20px;
+    font-family: "vollkorn";
+    transition: background 0.3s ease-in-out;
+}
+header nav .mainMenu li a#signUpBtnNav
+{
+    display: none;
+}
+header nav .mainMenu li a:hover
+{
+    background: #fff;
+    color: #2b1055;
+    font-size: 18px;
+}
+header nav .menu-btn
+{
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    z-index: 10000;
+}
+.menu-btn_lines, .menu-btn_lines::before, .menu-btn_lines::after
+{
+    width: 1.5rem;
+    height: 0.2rem;
+    background-color: #fff;
+    transition: all 0.5s ease-in-out;
+    border-radius: 50px;
+}
+.menu-btn_lines::before, .menu-btn_lines::after
+{
+    content: "";
+    position: absolute;
+}
+.menu-btn_lines::before
+{
+    transform: translateY(-0.5rem);
+}
+.menu-btn_lines::after
+{
+    transform: translateY(0.5rem);
+}
+header nav .menu-btn.open .menu-btn_lines
+{
+    transform: translateX(2rem);
+    background-color: transparent;
+}
+header nav .menu-btn.open .menu-btn_lines::before
+{
+    transform: rotate(45deg) translate(-1.5rem, 1.5rem);
+}
+header nav .menu-btn.open .menu-btn_lines::after
+{
+    transform: rotate(-45deg) translate(-1.5rem, -1.5rem);
+}
+section
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    overflow: hidden;
+}
+section::before
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to top, #5c3675, transparent);
+    z-index: 1000;
+}
+section img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+section img#moonLogo
+{
+    mix-blend-mode: screen;
+}
+section img#cannon
+{
+    z-index: 10;
+}
+#slogan
+{
+    font-family: "vollkorn";
+    top: 300px;
+    right: -480px;
+    position: absolute;
+    color: #fff;
+    white-space: nowrap;
+    font-size: 7.5vw;
+    z-index: 9;
+}
+#signUpBtn
+{
+    font-family: "vollkorn";
+    position: absolute;
+    left: 45.7%;
+    top: 60%;
+    display: flex;
+    text-decoration: none;
+    padding: 8px 30px;
+    border-radius: 20px;
+    background: #fff;
+    color: #2b1055;
+    font-size: 1.5em;
+    z-index: 9;
+}
+.description
+{ 
+    display: block;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 100px;
+    margin: auto;
+    background: linear-gradient(to bottom, #5c3675, #2A0F70);
+}
+.description img#stars
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+.description h2
+{
+    font-family: "vollkorn";
+    top: 30px;
+    font-size: 2.0em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.description p
+{
+    margin-top: 3%;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+::-webkit-scrollbar
+{
+    width: 12px;
+}
+::-webkit-scrollbar-thumb
+{
+    background: linear-gradient( #4345af, #5c3675);
+    border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover
+{
+    background: linear-gradient(transparent, #5c3675);
+}
+.descriptionCard
+{
+    margin: 5% auto 10% auto;
+    display: flex;
+    position: relative;
+    width: 600px;
+    height: 350px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.descriptionCard .innerCircle
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    transform-style: preserve-3d;
+    transition: 1s;
+}
+.descriptionCard .innerCircle::before
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #5c3675;
+    clip-path: circle(120px at center);
+    transition: 0.5s;
+}
+.descriptionCard:hover .innerCircle:before
+{
+    clip-path: circle(400px at center);
+    background: rgba(255, 255, 255, 0.05);
+}
+.descriptionCard img
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 101%;
+    width: 100%;
+    pointer-events: none;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.descriptionCard:hover img
+{
+    left: 72%;
+    height: 200px;
+    width: 300px;
+}
+.descriptionCard .descriptionText
+{
+    position: relative;
+    width: 50%;
+    left: 20%;
+    padding: 20px 20px 20px 40px;
+    transition: 0.5s;
+    visibility: hidden;
+    opacity: 0;
+}
+.descriptionCard:hover .descriptionText
+{
+    left: 0;
+    visibility: visible;
+    opacity: 1;
+}
+.descriptionCard .descriptionText h2
+{
+    color: #fff;
+    font-family: "vollkorn";
+    text-transform: uppercase;
+    font-size: 2em;
+    line-height: 1em;
+    margin-bottom: 5px;
+}
+.descriptionCard .descriptionText p
+{
+    color: #fff;
+}
+
+
+
+.loader-wrapper {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #42455a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+  }
+  .loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid #Fff;
+    animation: loader 2s infinite ease;
+  }
+  .loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    animation: loader-inner 2s infinite ease-in;
+  }
+
+
+  @media (max-width: 767px)
+  {
+    #signUpBtn
+    {
+        display: none;
+    }
+    header nav .logo
+    {
+        position: absolute;
+        left: 10%;
+        top: 30%;
+    }
+    header nav .menu-btn
+    {
+        display: flex;
+        position: absolute;
+        left: 80%;
+        top: 48%;
+    }
+    header nav .mainMenu
+    {
+        display: none;
+        position: absolute;
+        height: 100vh;
+        width: 35%;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10000;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #000;
+        transition: 0.3s ease-in-out;
+    }
+    header nav .mainMenu.open
+    {
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+    }
+    header nav .mainMenu li a#signUpBtnNav
+    {
+        display: flex;
+    }
+    header nav .mainMenu li
+    {
+        margin: 30px;
+        transition: 0.3s ease-in-out;
+    }
+    header nav .mainMenu li a:hover
+    {
+        background: #fff;
+        color: #2b1055;
+        font-size: 1.1rem;
+    }
+    .descriptionCard
+    {
+        width: auto;
+        max-width: 380px;
+        align-items: flex-start;
+        margin: 5% auto 10% auto;
+        height: 280px;
+    }
+    .descriptionCard:hover
+    {
+        height: 600px;
+        width: auto;
+        max-width: 350px;
+        align-items: flex-start;
+    }
+    .descriptionCard .descriptionText
+    {
+        width: 100;
+        left: 0;
+        padding: 30px;
+    }
+    .descriptionCard img
+    {
+        width: 101%;
+    }
+    .descriptionCard:hover img
+    {
+        top: 75%;
+        left: 50%;
+        height: 220px;
+        width: 250px;
+    }
+    .description p
+    {
+        display: flex;
+        width: 90%;
+    }
+  }
+
+  @media (max-width: 420px)
+  {
+    .mainDescription p
+    {
+        width: 90%;
+        max-width: 380px;
+    }
+    .descriptionCard
+    {
+        width: auto;
+        max-width: 380px;
+        align-items: flex-start;
+        margin: 5% auto 10% auto;
+        height: auto;
+        max-height:200px ;
+    }
+    .descriptionCard .descriptionText
+    {
+        padding: 20px;
+    }
+    .descriptionCard img
+    {
+        width: 101%;
+    }
+  }
+
+  @keyframes loader 
+  {
+    0% { transform: rotate(0deg);}
+    25% { transform: rotate(180deg);}
+    50% { transform: rotate(180deg);}
+    75% { transform: rotate(360deg);}
+    100% { transform: rotate(360deg);}
+  }
+  @keyframes loader-inner 
+  {
+    0% { height: 0%;}
+    25% { height: 0%;}
+    50% { height: 100%;}
+    75% { height: 100%;}
+    100% { height: 0%;}
+  }
+
