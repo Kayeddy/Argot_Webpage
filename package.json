@@ -1,0 +1,19 @@
+{
+  "name": "argot_webpage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Home.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EduShed/Argot_Webpage.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EduShed/Argot_Webpage/issues"
+  },
+  "homepage": "https://github.com/EduShed/Argot_Webpage#readme"
+}
