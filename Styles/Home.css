@@ -292,7 +292,7 @@ section img#cannon
     width: 50%;
     left: 20%;
     padding: 20px 20px 20px 40px;
-    transition: 0.5s;
+    transition: 0.2s ease-in-out;
     visibility: hidden;
     opacity: 0;
 }
@@ -405,39 +405,33 @@ section img#cannon
     .descriptionCard
     {
         width: auto;
-        max-width: 380px;
+        max-width: 400px;
         align-items: flex-start;
         margin: 5% auto 10% auto;
         height: 280px;
     }
     .descriptionCard:hover
     {
-        height: 600px;
+        height: fit-content;
         width: auto;
         max-width: 350px;
         align-items: flex-start;
     }
     .descriptionCard .descriptionText
     {
-        width: 100;
+        width: 90%;
         left: 0;
         padding: 30px;
     }
     .descriptionCard img
     {
         width: 101%;
+        transition: 0.5s ease-in-out;
     }
     .descriptionCard:hover img
     {
-        top: 75%;
-        left: 50%;
-        height: 220px;
-        width: 250px;
-    }
-    .description p
-    {
-        display: flex;
-        width: 90%;
+        height: 0px;
+        width: 0px;
     }
   }
 
